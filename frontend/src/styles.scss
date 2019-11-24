@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9)
+  }
+  4% {
+    transform: scale(1)
+  }
+  8% {
+    transform: scale(1.1)
+  }
+  12% {
+    transform: scale(1.2)
+  }
+  16% {
+    transform: scale(1.3)
+  }
+  20% {
+    transform: scale(1.5)
+  }
+  24% {
+    transform: scale(1.3)
+  }
+  28% {
+    transform: scale(1.2)
+  }
+  32% {
+    transform: scale(1.1)
+  }
+  36% {
+    transform: scale(1)
+  }
+}
+
+
+.space-around {
+  margin: 5rem;
+}
+
+.selected-square {
+  background: green !important;
+}
+
+.possible-move-square {
+  background: #228b22 !important;
+  cursor: pointer;
+}
+
+.RED {
+  & .disk-RED {
+    box-shadow: 0 5px 2px -2px rgba(241, 241, 242, 0.3),
+    0 3px 2px 0 rgba(241, 241, 242, 0.24),
+    0 2px 8px 0 rgba(241, 241, 242, 0.12) !important;
+  }
+}
+
+.BLACK {
+  & .disk-BLACK {
+    box-shadow: 0 5px 2px -2px rgba(241, 241, 242, 0.3),
+    0 3px 2px 0 rgba(241, 241, 242, 0.24),
+    0 2px 8px 0 rgba(241, 241, 242, 0.12) !important;
+  }
+}
+
+.locked {
+  & * {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+  }
+
+  & .square-LIGHT {
+    background: #bbbcbc !important;
+  }
+
+  & .square-DARK {
+    background: #bbbcbc !important;
+  }
+
+  & .disk {
+    -moz-animation: pulse 3s infinite ease 2s !important;
+    -webkit-animation: pulse 3s infinite ease 2s !important;
+    -o-animation: pulse 3s infinite ease 2s !important;
+    -ms-animation: pulse 3s infinite ease 2s !important;
+    animation: pulse 3s infinite ease 2s !important;
+  }
+}

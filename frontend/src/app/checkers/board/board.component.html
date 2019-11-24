@@ -1,0 +1,16 @@
+<div class="board">
+  <mat-grid-list cols="8" rowHeight="1:1">
+    <mat-grid-tile #tileRef (click)="moveDiskToSquare(tileRef)"
+                   *ngFor="let square of board?.squares"
+                   [attr.data-position]="square.position | json"
+                   [matTooltipDisabled]="!isPossibleMoveSquare(tileRef)"
+                   [ngClass]="'square-' + square.type"
+                   matTooltip="Click to move piece here"
+                   matTooltipPosition="above">
+      <ng-container *ngIf="square.disk && square.disk.state === 'IN_PLAY'">
+        <app-disk #disKRef (click)="selectDisk(disKRef)"
+                  [disk]="square.disk"></app-disk>
+      </ng-container>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

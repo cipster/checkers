@@ -1,0 +1,15 @@
+:host {
+  height: 100%;
+  width: 100%;
+
+  .mat-grid-tile {
+    &.square-LIGHT {
+      background: lightgoldenrodyellow;
+    }
+
+    &.square-DARK {
+      background: saddlebrown;
+    }
+  }
+}
+

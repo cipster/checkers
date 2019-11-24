@@ -1,0 +1,31 @@
+<div class="application-container">
+  <mat-toolbar color="primary">
+    <span fxFlex=""></span>
+    <span>Checkers</span>
+    <span fxFlex=""></span>
+  </mat-toolbar>
+
+  <div class="space-around" fxLayout="row" fxLayoutAlign="center start">
+    <div fxFlex="30">
+      <ng-container *ngIf="game">
+        <app-board [board]="game.board" [moves]="moves" [ngClass]="game.currentTurn.color"></app-board>
+
+        <mat-divider></mat-divider>
+
+        <ng-container *ngIf="game.capturedDisks.length">
+          <span>Captured pieces</span>
+          <mat-grid-list cols="32" rowHeight="1:1">
+            <mat-grid-tile
+              *ngFor="let disk of game.capturedDisks">
+              <app-disk [disk]="disk"></app-disk>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div fxFlex="5"></div>
+    <div fxFlex="30">
+      <app-move-info [gamePaused]="gamePaused$" [game]="game"></app-move-info>
+    </div>
+  </div>
+</div>
