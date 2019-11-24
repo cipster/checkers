@@ -9,6 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK 11
-      uses: "xlui/action-maven-cli@master"
-      args: mvn clean install
+    - name: GitHub Action for Maven & JDK 11
+      uses: xlui/action-maven-cli@v1.1
+      
+
